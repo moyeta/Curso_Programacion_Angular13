@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays II 📚</title>
+</head>
+
+<body>
+    <script>
+        // Array como elemento
+        var valores = [true, 5, false, 'hola', 1, 'adios'];
+
+        // Declaro las variables array como objetos
+        var arrayTexto = new Array();
+        var arrayNumero = new Array();
+        var arrayBuleana = new Array();
+
+        // Arrastrar elementos dentro de un array a otro (FILTRADO DE UN ARRAY)
+        for (const item of valores) {
+            if (typeof (item) == 'string') {
+                arrayTexto.push(item);
+            } else if (typeof (item) == 'number') {
+                arrayNumero.push(item);
+            } else if (typeof (item) == "boolean") {
+                arrayBuleana.push(item);
+            }
+        }
+        console.log(arrayTexto);
+        console.log(arrayNumero);
+        console.log(arrayBuleana);
+
+    </script>
+</body>
+
+</html>

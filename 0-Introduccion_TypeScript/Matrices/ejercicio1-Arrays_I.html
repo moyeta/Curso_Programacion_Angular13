@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays I 📚</title>
+</head>
+<body>
+    <!-- 
+                                    ========
+                                    MATRICES
+                                    ========
+
+        DEFINICIÓN: Conjunto de elementos colocados de forma adyacente en la memoria,
+        permitiéndonos, dirigirnos a ellos con un solo nombre, y además no van a perder
+        la independencia de los mismos.
+        Una gran utilidad para manejar una gran cantidad de datos y guardarlos de manera
+        ordenada. 
+            TODO ELEMENTO PERTENECIENTE A UNA MATRIZ (Arrays) LLEVA ASOCIADO UN ÍNDICE
+            (orden de colocaciön, este orden siempre, siempre comienza en 0).
+
+        Tipos de Matrices:
+            1. Según la estabilidad de su tamaño
+                - Tamaño fijo (matrices estáticas)
+                - Tamaño variable (matrices dinámicas)
+            2. Según sus dimensiones
+                - Una sola dimensión (un solo grupo de elementos)
+                - Matrices Multidimensionales (dos o más grupos de elementos)
+        ✔ Conclusión:
+        Propiedad importante en los arrays, serán .length nos ayudará a conocer claramente el
+        TAMAÑO del Array, es decir, el número de elementos
+            Sintaxis:
+            1. var miArray = [elemento1, elemento2, elemento3];
+            2. var miArray = new Array() // Creamos un array de carga de una gran cantidad de
+            datos pero que referencia a objetos
+            3. var miArray = new Array(elemento1, elemento2, elemento3);
+            4. var miArray = []:any // Crea el array pero sin saber el número y/o tipo de elementos
+            5. var miArray = {} // estructuras json
+     -->
+    <script>
+        var numero = new Array(1, 2, 3, 4, 5, 6, 7, 8) //Array objeto como variable global
+        // 1 Reccorido Ortodo
+        console.log('RECORRIDO ORTODOXO:');
+        for (let i = 0; i < numero.length; i++) {
+            console.log(numero[i]); // Trae cada elemento del array
+            /* console.log(numero); */ // Trae todo el array las veces que dure la iteración
+        }
+        ;
+        // 2. Recorrido Mejorado
+        // i) FOR IN (Recorrido fuerte)
+        console.log('RECORRIDO MEJORADO FOR IN:')
+        for (var lolita in numero) {
+            console.log(numero[lolita]);
+        }
+        
+        // ii) FOR OF (Recorrido rápido)
+        console.log('RECORRIDO MEJORADO FOR OF:');
+        for (let elemento of numero) {
+            console.log(elemento);
+        }
+
+        // METODOS Y PROPIEDADES (Objeto Array)
+        //1º Array invertido
+        document.write('Array invertido: ' + numero.reverse()+'<br>');
+        // 2º Ascendene
+        document.write('Array ascendente: ' + numero.sort()+'<br>');
+        // 3º Separación por grafías
+        document.write('Array separado por grafías: ' + numero.join('/') +'<br>');
+        // 4º Posición
+        document.write('Array posición: ' + numero.slice(3,6)+'<br>');
+        // 5º A partir de un índice
+        document.write('Array partiendo de un índice: ' + numero.slice(3)+'<br>');
+        // 6º Concatenación
+        var letras = ['b', 'h', 'w', 'j'];
+        // concatenación de ambos arrays, uno elemento (letras) y otro objeto (numero)
+        document.write('Concatenación híbrida: ' + numero.concat(letras) + '<br>');
+        document.write('Concatenación inversa: ' + letras.concat(numero) + '<br>');
+    </script>
+</body>
+
+</html>
