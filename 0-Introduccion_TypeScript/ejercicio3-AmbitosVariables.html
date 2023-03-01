@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ambito de las Variables let & const ♾</title>
+</head>
+
+<body>
+    <script>
+        /* var i = 0; */
+        for (var i = 0; i < 10; i++) { // i aquí se define como variable global (let i sería para ámbito local)
+            let j = i;
+            document.write('Variable local j: ' + j + '<br>');
+            /* document.write('Variable Global i: ' + i + '<br>'); */
+        }
+        document.write('Variable Global i fuera: ' + i + '<br>');
+        document.write('Variable local j fuera: ' + j + '<br>'); // Undefined
+
+        var i = 0;
+        for (i = 0; i < 10; i++) {
+            var j = i;
+            let k = i;     
+        }
+        console.log(j);
+        console.log(k); // Undefined
+        
+    </script>
+    <script>
+        console.log(j); // Variable definida Global funciona incluso fuera del script
+    </script>
+</body>
+
+</html>

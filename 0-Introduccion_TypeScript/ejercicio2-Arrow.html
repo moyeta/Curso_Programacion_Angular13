@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evolución de la función ARROW 🎯</title>
+</head>
+
+<body>
+    <!-- 
+        Su punto de partida, que muchos lenguajes han participado desde concepto de inicio.
+        FOREACH, será su base de desarrollo inicial.
+        Su finalidad parte ejecuta una función por cada elemento/parámetro asignado 
+        inicialmente dicha iteración partía de 3 elementos
+        1 valor
+        2 índice
+        3 Array
+        [inicio]
+        forEach(function(elemente, índice, array)){
+            metodos declarados de ejecución
+        }
+
+        [1ª Evolución]
+        varArray.foreach(function(elemento)){
+            metodos declarados de ejecutar
+        }
+
+        [2ª Evolución]
+        array.forEach(element => {
+            metodos declarados de ejecutar    
+        });
+     -->
+    <script>
+        var datos = [1, 2, 3, 4, 5, 6, 7, 8];
+        /*
+        Recordatorio:
+        La sentencia return en la finalización de la función donde especifica
+        un valor para ser devuelto. Finalidad propia de dicha sentencia no es otra,
+        forzar la salida de manera inmediata de la función en la que se encuentra
+        
+        -------------------------- CONJUNTO DE SINTAXIS --------------------------
+        */
+        // Recorridos Ortodoxos
+        var otraFuncion = function (numero) {
+            return numero + 2;
+        }
+        console.log('Recorrido Ortodoxo: ' + otraFuncion(6));
+        /* console.log(otraFuncion('6')); */
+
+        // Omitiendo la funcion
+        // Lo que hay delante del arrow es funcional. El RETURN queda escondido
+        var otraFuncion = (numero)=>numero+2;
+        console.log('Recorrido ARROW: ' + otraFuncion(2));
+
+        // Funcionalidad y Reutilización
+        var a = otraFuncion(5);
+        console.log('Recorrido Reutilización: ' + a);
+
+        var b = otraFuncion(10);
+        console.log('Recorrido Reutilización B: ' + b);
+
+        // Solo hay un parámetro
+        /* var nombre = 'Juan'; */
+        var hola = nombre => (`Hola, me llamo: ${nombre}`);
+        console.log(hola(`Antonio`));
+
+        // Ejecución en una función sin parámetros =()=>
+        var mostrarFecha = () => new Date().toLocaleDateString();
+        console.log(mostrarFecha());
+
+        // Devolviendo objeto literal
+        // Ejecuta pasando los parámetros
+        var usuario = (correo, clave, nombre) => ({Email:correo, Key:clave, Name:nombre});
+        console.log(usuario('andrgogo1012@gmail.com','1012', 'Francisco'));
+        console.log(usuario.length);
+
+    </script>
+</body>
+
+</html>

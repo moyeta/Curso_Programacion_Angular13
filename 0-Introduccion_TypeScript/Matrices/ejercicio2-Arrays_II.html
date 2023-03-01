@@ -11,7 +11,7 @@
 <body>
     <script>
         // Array como elemento
-        var valores = [true, 5, false, 'hola', 1, 'adios'];
+        var valores = [true, 5, false, 'hola', 2, 'adios'];
 
         // Declaro las variables array como objetos
         var arrayTexto = new Array();
@@ -19,7 +19,10 @@
         var arrayBuleana = new Array();
 
         // Arrastrar elementos dentro de un array a otro (FILTRADO DE UN ARRAY)
-        for (const item of valores) {
+        /*
+        .push() accede al elemento y lo arrastra al final de la estructura
+        */
+        for (let item of valores) {
             if (typeof (item) == 'string') {
                 arrayTexto.push(item);
             } else if (typeof (item) == 'number') {
@@ -31,7 +34,66 @@
         console.log(arrayTexto);
         console.log(arrayNumero);
         console.log(arrayBuleana);
+        /* console.log('Item fuera de ámbito: '+item); */
+        /*
+        Desarrollando comportamientos del Array
+        */
+        // 1º Identificación de elementos mayores vs menores
+        if (arrayTexto[0].length > arrayTexto[1].length) {
+            document.write('El texto mayor será: ' + arrayTexto[0]);
+        } else {
+            document.write('El texto mayor será: ' + arrayTexto[1]);
+        }
+        // 2º Iteraciones de booleano + condiciones arrayBuleana[true, false]
+        // (MISMO CONCEPTO MATEMATICO DE +- => ++=+ +-=- -+=- --=+)
+        var resultadoTrue = true;
+        var resultadoFalse = false;
+       
+        for (let item of arrayBuleana) {
+            resultadoTrue = resultadoTrue || item; // item=true
+            console.log('Item: ' + item);
+            resultadoFalse = resultadoFalse || item; // item=true
+            console.log('Item: ' + item);
+            // Dentro o fuera del ambito del recorrido observamos la itineracia de la variable item 
+        }
+        
+        document.write('<br>Resultado verdadero: ' + resultadoTrue + '<br>');
+        document.write('Resultado falso: ' + resultadoFalse + '<br>');
+       
+        // 3º Operaciones Algebraicas
 
+        var suma = 0;
+        var multiplicacion = 1;
+        for (const num of arrayNumero) {
+            // Coge el valor del elemento y le suma el siguiente
+            suma += num;
+            multiplicacion *= num;
+            // Dentro o fuera del ambito del recorrido observamos la itineracia de la variable suma
+            // Dentro del FOR el console.log dará como resultado (5, 7), fuera el ámbito dará 7
+            console.log('Suma: '+suma);
+            console.log('Multiplicacion: ' + multiplicacion);
+        }
+
+        // 4º Identificador de la Posición
+        var frutas = ['Manzanas', 'Peras', 'Naranjas', 'Platano'];
+        // Añadir al array, última posición, modificamos el array a dinámico - CREAD
+        var nuevaLongitud = frutas.push('Melocotones'); // nuevaLongitud es de tipo numero, identifica la última posición
+        console.log(frutas);
+        console.log(nuevaLongitud);
+
+        //Encontrar posición del elemento - 
+        var posicion = frutas.indexOf('Naranjas');
+        console.log('Posición de Naranjas: '+posicion);
+
+        // Borrar último elemento - DELETE
+        var eliminar = frutas.pop();
+        console.log('Eliminado: '+eliminar);
+        console.log('frutas queda: '+frutas);
+
+        // Iniciar el array - UPDATE
+        var inicio = frutas.unshift('Fresas');
+        console.log('Inicio de frutas: ' + frutas)
+     
     </script>
 </body>
 
