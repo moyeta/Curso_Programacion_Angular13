@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propagación y Variables de Argumentos</title>
+</head>
+<body>
+    <!-- 
+        I] Propagación o spread
+
+        Es una expresión, que ayuda a apocopar, allí donde se esperan múltiples argumentos, elementos...
+        
+        Sintaxis:
+        ...varPropagar
+        Ejemplo.
+     -->
+     <script>
+        // 1
+        let sumar = (a, b) => a+b;
+        var añadir = [4, 5];
+        console.log(sumar(...añadir));
+        //2
+        var nombre = new Array('Juan', 'Pedro', 'Maite'); // Objeto Array
+        document.write(nombre + '<br>');
+        document.write(...nombre + '<br>');
+
+        var nuevos = ['Israel', 'Rocio', ...nombre, 'Maria']; // Carga de elementos
+        document.write(nuevos + '<br>');
+        // 3
+        var mapABC={a:5, b:7, c:8}; // Estructura ordenada y adyacente con elementos y valor
+        let mapABCD ={...mapABC, d:4};
+        console.log(mapABCD.a); // Llamo al elemento para que devuleva su valor
+
+        /* 
+        II] Variables de Argumento (parámetro rest)
+        Definimos argumentos, que estarán indicando al método o función concreta donde puede
+        pasar múltiples variables
+        */
+
+        function mostrarElementos(...muestra) {
+            console.log(muestra);
+            console.log(muestra[0]);
+        }
+        mostrarElementos(2, 8, 5);
+        mostrarElementos(7, 3, 4);
+
+        // Pensamiento Funcional
+        function multiplicar(n1, n2, ...n3) {
+            let resultado = n1*n2;
+            for (let num of n3){
+                resultado *= num;
+                
+            }
+            return resultado;
+            console.log(resultado);
+        }
+        console.log(`multiplicacion ${multiplicar(5, 7, 1, 2)}`);
+     </script>
+</body>
+</html>
